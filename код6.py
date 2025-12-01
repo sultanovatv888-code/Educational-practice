@@ -1,10 +1,12 @@
 import sqlite3
 from typing import List, Dict
+import datetime
 
 class BookTracker:
     def __init__(self, db_name: str = "book_tracker.db"):
         self.db_name = db_name
         self.init_database()
+        self.star_time = datetime.datetime.now()
     
     def init_database(self):
         """Инициализация базы данных"""
@@ -360,4 +362,5 @@ def demo():
     app.run()
 
 if __name__ == "__main__":
+
     demo()
